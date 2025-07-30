@@ -10,5 +10,9 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        H2ConnectionTest db = new H2ConnectionTest();
+        db.start();
+
     }
 }
