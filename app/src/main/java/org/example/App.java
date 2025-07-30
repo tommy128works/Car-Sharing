@@ -12,7 +12,7 @@ public class App {
         System.out.println(new App().getGreeting());
 
         H2ConnectionTest db = new H2ConnectionTest();
-        db.start();
+        db.createTable();
 
     }
 }
