@@ -19,13 +19,15 @@ public class H2ConnectionTest {
              Statement stmt = conn.createStatement()) {
             System.out.println("Connected to H2 database!");
 
-            String sql = """
+            String sqlDropTable = "DROP TABLE IF EXISTS COMPANY;";
+            stmt.executeUpdate(sqlDropTable);
+            String sqlCreateTable = """
                     CREATE TABLE COMPANY (
                         ID INT PRIMARY KEY,
                         NAME VARCHAR(255) NOT NULL
                     );
                     """;
-            stmt.executeUpdate(sql);
+            stmt.executeUpdate(sqlCreateTable);
 
         } catch (SQLException e) {
             e.printStackTrace();
