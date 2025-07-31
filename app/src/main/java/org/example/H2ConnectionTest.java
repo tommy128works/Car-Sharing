@@ -6,12 +6,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class H2ConnectionTest {
-    private String jdbcURL = "jdbc:h2:./src/db/test"; // Stored in user home directory
+    private String jdbcURL;
     private String username = "sa";
     private String password = "";
 
-    public H2ConnectionTest() {
-
+    public H2ConnectionTest(String databaseFileName) {
+        this.jdbcURL = "jdbc:h2:./src/db/" + databaseFileName;
     }
 
     void createTable() {

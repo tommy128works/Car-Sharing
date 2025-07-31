@@ -8,10 +8,25 @@ public class App {
         return "Hello World!";
     }
 
+    static String getDatabaseFileName(String[] args) {
+        String databaseFileName = "test";
+
+        for (int i = 0; i < args.length; i++) {
+            String arg = args[i];
+            if ("-databaseFileName".equals(arg) && i + 1 < args.length) {
+                databaseFileName = args[i + 1];
+                break;
+            }
+        }
+        return databaseFileName;
+    }
+
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-        H2ConnectionTest db = new H2ConnectionTest();
+        String databaseFileName = getDatabaseFileName(args);
+
+        H2ConnectionTest db = new H2ConnectionTest(databaseFileName);
         db.createTable();
 
     }
