@@ -23,8 +23,8 @@ public class H2ConnectionTest {
             stmt.executeUpdate(sqlDropTable);
             String sqlCreateTable = """
                     CREATE TABLE COMPANY (
-                        ID INT PRIMARY KEY,
-                        NAME VARCHAR(255) NOT NULL
+                        ID INT PRIMARY KEY AUTO_INCREMENT,
+                        NAME VARCHAR(255) NOT NULL UNIQUE
                     );
                     """;
             stmt.executeUpdate(sqlCreateTable);

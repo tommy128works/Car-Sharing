@@ -29,5 +29,6 @@ public class App {
         H2ConnectionTest db = new H2ConnectionTest(databaseFileName);
         db.createTable();
 
+        TextUI ui = new TextUI();
     }
 }

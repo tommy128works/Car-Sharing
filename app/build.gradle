@@ -43,3 +43,9 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+
+tasks.named('run') {
+    // Make sure stdin is forwarded so Scanner(System.in) works
+    standardInput = System.in
+}
